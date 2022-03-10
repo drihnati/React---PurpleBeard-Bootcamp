@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from "framer-motion"
 
 import _NavBarHW from './_NavBarHW';
 
@@ -6,8 +7,21 @@ import _NavBarHW from './_NavBarHW';
   return (
     <div className='app-container'>
       <_NavBarHW />
-      <div className="content">Home Work 2</div>
+      <div className="content">
+        Home Work 2 
+        <motion.div
+          drag
+          className="square"
+          initial={{ scale: 0 }}
+          animate={{ rotate: 180, scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20
+          }}
+        />  
       </div>
+    </div>
   );
 }
 
